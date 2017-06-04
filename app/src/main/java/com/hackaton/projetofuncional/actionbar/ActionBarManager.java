@@ -1,8 +1,10 @@
 package com.hackaton.projetofuncional.actionbar;
 
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.hackaton.projetofuncional.R;
@@ -56,7 +58,6 @@ public class ActionBarManager {
                 })
                 .build();
 
-
         mActionBar = new DrawerBuilder()
                 .withActivity(_act)
                 .withToolbar(toolbar)
@@ -66,13 +67,14 @@ public class ActionBarManager {
                         /*separator*/new SectionDrawerItem().withName("Filtros"),
                         new SecondaryDrawerItem().withIdentifier(1).withSelectable(false).withName("Todos").withIcon(FontAwesome.Icon.faw_globe),
                         new SecondaryDrawerItem().withIdentifier(2).withSelectable(false).withName("Denúncia").withIcon(FontAwesome.Icon.faw_exclamation_triangle),
-                        new SecondaryDrawerItem().withIdentifier(3).withSelectable(false).withName("Projetos Futuros").withIcon(FontAwesome.Icon.faw_gavel),
-                        new SecondaryDrawerItem().withIdentifier(4).withSelectable(false).withName("Projetos Ativos").withIcon(FontAwesome.Icon.faw_list),
+                        new SecondaryDrawerItem().withIdentifier(3).withSelectable(false).withName("Projetos Futuros").withIcon(FontAwesome.Icon.faw_clock_o),
+                        new SecondaryDrawerItem().withIdentifier(4).withSelectable(false).withName("Projetos Ativos").withIcon(FontAwesome.Icon.faw_check),
+                        new SecondaryDrawerItem().withIdentifier(5).withSelectable(false).withName("Enquetes").withIcon(FontAwesome.Icon.faw_list),
                         /*separator*/new SectionDrawerItem().withName("Histórico"),
-                        new SecondaryDrawerItem().withIdentifier(5).withName("Suas denúncias").withIcon(FontAwesome.Icon.faw_bar_chart),
+                        new SecondaryDrawerItem().withIdentifier(6).withName("Suas denúncias").withIcon(FontAwesome.Icon.faw_bar_chart),
                         /*separator*/ new DividerDrawerItem(),
-                        new SecondaryDrawerItem().withIdentifier(8).withSelectable(false).withName("Compartilhe").withIcon(FontAwesome.Icon.faw_share_alt),
-                        new SecondaryDrawerItem().withIdentifier(10).withName("Sobre").withIcon(FontAwesome.Icon.faw_info_circle)
+                        new SecondaryDrawerItem().withIdentifier(7).withSelectable(false).withName("Compartilhe").withIcon(FontAwesome.Icon.faw_share_alt),
+                        new SecondaryDrawerItem().withIdentifier(8).withName("Sobre").withIcon(FontAwesome.Icon.faw_info_circle)
 
                 )
                 .addStickyDrawerItems(new SecondaryDrawerItem().withSelectable(false).withIdentifier(11).withName("Configurações").withIcon(FontAwesome.Icon.faw_cog))

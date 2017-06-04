@@ -95,6 +95,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.clear();
 
 
+        marcarLugar(location.getLatitude(), location.getLongitude(), false);
+
         for (Ocorrencia in : arrDados) {
             if (tipo == 1) {//todos
                 LatLng sydney = new LatLng(in.lat, in.longe);
@@ -188,10 +190,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         if (c) {
             mMap.addMarker(new MarkerOptions().position(sydney)
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(a, b), 16.0f));
         } else {
-            mMap.addMarker(new MarkerOptions().position(sydney));
+            mMap.addMarker(new MarkerOptions().position(sydney)
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+            //mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(a, b), 16.0f));
         }
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(a, b), 16.0f));
+
     }
 
     private synchronized void callConnection() {
