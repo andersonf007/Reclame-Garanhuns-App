@@ -1,4 +1,4 @@
-package com.hackaton.projetofuncional.activities;
+package com.hackaton.projetofuncional.actionbar;
 
 import android.app.Activity;
 import android.support.v7.widget.Toolbar;

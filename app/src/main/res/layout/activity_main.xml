@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal">
 
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
@@ -18,7 +19,9 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.hackaton.projetofuncional.MainActivity"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/my_toolbar"
-        android:layout_alignParentStart="true" />
+        tools:context="com.hackaton.projetofuncional.activities.MainActivity" />
+
+
 </RelativeLayout>
