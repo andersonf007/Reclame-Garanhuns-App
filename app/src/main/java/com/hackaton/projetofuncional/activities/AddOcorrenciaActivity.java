@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.hackaton.projetofuncional.R;
 
 public class AddOcorrenciaActivity extends AppCompatActivity {
-    private String[] tipos = new String[]{"Aluminação", "Elétrico", "Encanação", "Deteriorização de vias"};
+    private String[] tipos = new String[]{"Iluminação", "Elétrico", "Encanação", "Deteriorização de vias"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,4 +49,5 @@ public class AddOcorrenciaActivity extends AppCompatActivity {
     public void fecharTelaAddOcorrencia(View view) {
         this.finish();
     }
+
 }

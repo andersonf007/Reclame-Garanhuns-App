@@ -20,22 +20,28 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.hackaton.projetofuncional.R;
 import com.hackaton.projetofuncional.actionbar.ActionBarManager;
+import com.hackaton.projetofuncional.entities.Ocorrencia;
+
+import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener {
 
     private ActionBarManager actionBar;
-    private GoogleMap mMap;
+    public static GoogleMap mMap;
+    public static Location location;
 
 
     private String TAG = "MATEUS";
-    private GoogleApiClient mGoogleApiClient;
+    public static GoogleApiClient mGoogleApiClient;
+    public static ArrayList<Ocorrencia> arrDados = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,13 +59,46 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
         callConnection();
+        arrDados = criarDadosFalsos();
     }
 
+    public ArrayList<Ocorrencia> criarDadosFalsos() {
+        ArrayList<Ocorrencia> arr = new ArrayList<>();
+        int i = 1, d = 1;
+        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:25", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8816484, -36.4766233, 0));
+        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:30", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8816484, -36.4666233, 0));
+        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:35", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8816113, -36.4781307, 1));
+        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:45", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8818657, -36.4779, 1));
+        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:50", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8818763, -36.4799859, 2));
+        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:55", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8818763, -36.4779859, 2));
+        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:56", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8823311, -36.4781724, 0));
+        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:56", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8823452, -36.4786396, 0));
+
+
+        return arr;
+    }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         mMap.clear();
+
+
+        for (Ocorrencia in : arrDados) {
+            LatLng sydney = new LatLng(in.lat, in.longe);
+            if (in.tipo == 0) {
+                mMap.addMarker(new MarkerOptions().position(sydney).title(in.descricao)
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+            } else if (in.tipo == 1) {
+                mMap.addMarker(new MarkerOptions().position(sydney).title(in.descricao)
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+            } else if (in.tipo == 2) {
+                mMap.addMarker(new MarkerOptions().position(sydney).title(in.descricao)
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+            }
+
+        }
+
 
         // Add a marker in Sydney and move the camera
         //LatLng sydney = new LatLng(-34, 151);
@@ -69,8 +108,19 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         GoogleMap.OnMarkerClickListener aux = new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
+                for (int i = 0; i < arrDados.size(); i++) {
+                    if (arrDados.get(i).lat == marker.getPosition().latitude
+                            && arrDados.get(i).longe == marker.getPosition().longitude) {
+                        OcorrenciaActivity.ocorrenciaId = i;
+
+                        break;
+                    }
+
+                }
+
                 Intent intent = new Intent(MainActivity.this, OcorrenciaActivity.class);
                 startActivity(intent);
+
 
                 return true;
             }
@@ -113,18 +163,18 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
 
         //if (flag1 && flag2) {
-        Location l = LocationServices
+        location = LocationServices
                 .FusedLocationApi
                 .getLastLocation(mGoogleApiClient);
 
         Log.i(TAG, "chegou");
 
-        if (l != null) {
-            Log.i(TAG, "latitude: " + l.getLatitude());
-            Log.i(TAG, "longitude: " + l.getLongitude());
-            printar(l.getLatitude(), +l.getLongitude());
+        if (location != null) {
+            Log.i(TAG, "latitude: " + location.getLatitude());
+            Log.i(TAG, "longitude: " + location.getLongitude());
+            //printar(location.getLatitude(), location.getLongitude());
 
-            marcarLugar(l.getLatitude(), l.getLongitude(), "Meu local");
+            marcarLugar(location.getLatitude(), location.getLongitude(), "Meu local");
         }
     }
 
@@ -179,7 +229,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Toast.makeText(this, "AAAAAAAEEEEEEE", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "AAAAAAAEEEEEEE", Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(this, AddOcorrenciaActivity.class);
             startActivity(intent);
