@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.hackaton.projetofuncional.R;
 
 public class AddOcorrenciaActivity extends AppCompatActivity {
-    private String[] tipos = new String[]{"Iluminação", "Elétrico", "Encanação", "Deteriorização de vias"};
+    private String[] tipos = new String[]{"Iluminação", "Elétrico", "Encanação", "Deteriorização de vias", "Outros"};
     //se alterar isso, aalterar if/el Ocorrencia.java
 
     @Override
@@ -23,15 +23,6 @@ public class AddOcorrenciaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_ocorrencia);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {

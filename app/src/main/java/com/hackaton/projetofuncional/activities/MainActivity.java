@@ -2,6 +2,15 @@ package com.hackaton.projetofuncional.activities;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.ColorDrawable;
 import android.location.Location;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -11,6 +20,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -60,6 +70,18 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         callConnection();
         arrDados = criarDadosFalsos();
+
+        ImageView im1 = (ImageView) findViewById(R.id.iv_denuncia);
+        ImageView im2 = (ImageView) findViewById(R.id.iv_projatv);
+        ImageView im3 = (ImageView) findViewById(R.id.iv_projfut);
+        ImageView im4 = (ImageView) findViewById(R.id.iv_voce);
+
+        im1.setBackground(new ColorDrawable(0xfff44336));
+        im2.setBackground(new ColorDrawable(0xffffeb3b));
+        im3.setBackground(new ColorDrawable(0xff64dd17));
+        im4.setBackground(new ColorDrawable(0xff4527a0));
+
+
     }
 
     public ArrayList<Ocorrencia> criarDadosFalsos() {

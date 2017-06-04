@@ -33,6 +33,8 @@ public class Ocorrencia {
             return "Encanação";
         } else if (tipoPeloUsuario == 3) {
             return "Deteriorização de vias";
+        } else if (tipoPeloUsuario == 4) {
+            return "Outros";
         } else if (tipoPeloUsuario == 10) {
             return "Projeto Futuro";
         } else if (tipoPeloUsuario == 11) {
