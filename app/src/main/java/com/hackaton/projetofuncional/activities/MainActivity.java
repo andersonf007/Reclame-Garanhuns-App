@@ -65,17 +65,67 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public ArrayList<Ocorrencia> criarDadosFalsos() {
         ArrayList<Ocorrencia> arr = new ArrayList<>();
         int i = 1, d = 1;
-        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:25", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8816484, -36.4766233, 0));
-        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:30", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8816484, -36.4666233, 0));
-        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:35", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8816113, -36.4781307, 1));
-        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:45", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8818657, -36.4779, 1));
-        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:50", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8818763, -36.4799859, 2));
-        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:55", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8818763, -36.4779859, 2));
-        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:56", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8823311, -36.4781724, 0));
-        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:56", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8823452, -36.4786396, 0));
+        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:25", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.877379, -36.4678918, 0, 0));
+        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:30", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.877014, -36.4664424, 0, 1));
+        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:35", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8855002, -36.4689299, 1, 10));
+        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:45", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.9129116, -36.4974487, 1, 10));
+        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:50", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8890677, -36.4926003, 2, 11));
+        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:55", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8819978, -36.499972, 2, 11));
+        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:56", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8837826, -36.4936495, 0, 2));
+        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:56", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8814267, -36.4880738, 0, 3));
+        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:56", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8831282, -36.482498, 0, 2));
+        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:56", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8843042, -36.4740047, 0, 1));
+        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:56", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8836144, -36.4761215, 1, 10));
+        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:56", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.882844, -36.4752202, 1, 10));
+        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:56", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8835343, -36.479524, 2, 11));
+        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:56", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.882944, -36.4786734, 2, 11));
+        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:56", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.881033, -36.4779645, 0, 2));
+        arr.add(new Ocorrencia("Joao Antonio" + (++i), "04/06/2017 01:56", "Realmente, isso tá causando um transtorno pra sociedade" + (++d), 150, 2, -8.8830741, -36.4762633, 0, 3));
 
 
         return arr;
+    }
+
+    public void repopulate(int tipo) {
+        /*if (drawerItem.getIdentifier() == 1) {//todos
+        } else if (drawerItem.getIdentifier() == 2) {//denuncias
+        } else if (drawerItem.getIdentifier() == 3) {//projetos futuros
+        } else if (drawerItem.getIdentifier() == 4) {//projetos ativos
+        }*/
+        mMap.clear();
+
+
+        for (Ocorrencia in : arrDados) {
+            if (tipo == 1) {//todos
+                LatLng sydney = new LatLng(in.lat, in.longe);
+                if (in.tipoVisualizacao == 0) {
+                    mMap.addMarker(new MarkerOptions().position(sydney).title(in.descricao)
+                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+                } else if (in.tipoVisualizacao == 1) {
+                    mMap.addMarker(new MarkerOptions().position(sydney).title(in.descricao)
+                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+                } else if (in.tipoVisualizacao == 2) {
+                    mMap.addMarker(new MarkerOptions().position(sydney).title(in.descricao)
+                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+                }
+            } else if (tipo == 2 && in.tipoVisualizacao == 0) {//denuncias
+                LatLng sydney = new LatLng(in.lat, in.longe);
+                mMap.addMarker(new MarkerOptions().position(sydney).title(in.descricao)
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+            } else if (tipo == 3 && in.tipoVisualizacao == 1) {//projetos futuros
+                LatLng sydney = new LatLng(in.lat, in.longe);
+                mMap.addMarker(new MarkerOptions().position(sydney).title(in.descricao)
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+            } else if (tipo == 4 && in.tipoVisualizacao == 2) {//projetos ativos
+                LatLng sydney = new LatLng(in.lat, in.longe);
+                mMap.addMarker(new MarkerOptions().position(sydney).title(in.descricao)
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+            }
+
+
+        }
+
     }
 
     @Override
@@ -86,40 +136,40 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         for (Ocorrencia in : arrDados) {
             LatLng sydney = new LatLng(in.lat, in.longe);
-            if (in.tipo == 0) {
+            if (in.tipoVisualizacao == 0) {
                 mMap.addMarker(new MarkerOptions().position(sydney).title(in.descricao)
-                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
-            } else if (in.tipo == 1) {
-                mMap.addMarker(new MarkerOptions().position(sydney).title(in.descricao)
-                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-            } else if (in.tipo == 2) {
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+            } else if (in.tipoVisualizacao == 1) {
                 mMap.addMarker(new MarkerOptions().position(sydney).title(in.descricao)
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+            } else if (in.tipoVisualizacao == 2) {
+                mMap.addMarker(new MarkerOptions().position(sydney).title(in.descricao)
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
             }
 
         }
-
-
-        // Add a marker in Sydney and move the camera
-        //LatLng sydney = new LatLng(-34, 151);
-        //mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        //mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
         GoogleMap.OnMarkerClickListener aux = new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
                 for (int i = 0; i < arrDados.size(); i++) {
+                    if (marker.getPosition().latitude == location.getLatitude() &&
+                            marker.getPosition().longitude == location.getLongitude()) {
+                        Toast.makeText(MainActivity.this, "Você!!", Toast.LENGTH_SHORT).show();
+                        continue;
+                    }
                     if (arrDados.get(i).lat == marker.getPosition().latitude
                             && arrDados.get(i).longe == marker.getPosition().longitude) {
                         OcorrenciaActivity.ocorrenciaId = i;
+
+
+                        Intent intent = new Intent(MainActivity.this, OcorrenciaActivity.class);
+                        startActivity(intent);
 
                         break;
                     }
 
                 }
-
-                Intent intent = new Intent(MainActivity.this, OcorrenciaActivity.class);
-                startActivity(intent);
 
 
                 return true;
@@ -130,11 +180,17 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     }
 
-    private void marcarLugar(double a, double b, String txt) {
+    private void marcarLugar(double a, double b, boolean c) {
         LatLng sydney = new LatLng(a, b);
-        mMap.addMarker(new MarkerOptions().position(sydney).title(txt));
+
         //mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
+        if (c) {
+            mMap.addMarker(new MarkerOptions().position(sydney)
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+        } else {
+            mMap.addMarker(new MarkerOptions().position(sydney));
+        }
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(a, b), 16.0f));
     }
 
@@ -174,7 +230,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             Log.i(TAG, "longitude: " + location.getLongitude());
             //printar(location.getLatitude(), location.getLongitude());
 
-            marcarLugar(location.getLatitude(), location.getLongitude(), "Meu local");
+            marcarLugar(location.getLatitude(), location.getLongitude(), true);
         }
     }
 

@@ -118,6 +118,8 @@ public class OcorrenciaActivity extends AppCompatActivity implements OnMapReadyC
         tvN = (TextView) findViewById(R.id.tv_negativo);
         tvN.setText("" + MainActivity.arrDados.get(ocorrenciaId).negativos);
 
+
+        this.setTitle(MainActivity.arrDados.get(ocorrenciaId).getTextoTipo());
     }
 
     @Override

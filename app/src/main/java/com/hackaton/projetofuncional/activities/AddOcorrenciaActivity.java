@@ -15,6 +15,7 @@ import com.hackaton.projetofuncional.R;
 
 public class AddOcorrenciaActivity extends AppCompatActivity {
     private String[] tipos = new String[]{"Iluminação", "Elétrico", "Encanação", "Deteriorização de vias"};
+    //se alterar isso, aalterar if/el Ocorrencia.java
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

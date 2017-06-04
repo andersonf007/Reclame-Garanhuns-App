@@ -3,8 +3,10 @@ package com.hackaton.projetofuncional.actionbar;
 import android.app.Activity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Toast;
 
 import com.hackaton.projetofuncional.R;
+import com.hackaton.projetofuncional.activities.MainActivity;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
@@ -62,12 +64,12 @@ public class ActionBarManager {
                 .addDrawerItems(
                         new SecondaryDrawerItem().withIdentifier(0).withName("Início").withIcon(FontAwesome.Icon.faw_home),
                         /*separator*/new SectionDrawerItem().withName("Filtros"),
-                        new SecondaryDrawerItem().withIdentifier(1).withName("Todos").withIcon(FontAwesome.Icon.faw_globe),
-                        new SecondaryDrawerItem().withIdentifier(2).withName("Denúncia").withIcon(FontAwesome.Icon.faw_exclamation_triangle),
-                        new SecondaryDrawerItem().withIdentifier(3).withName("Projetos").withIcon(FontAwesome.Icon.faw_gavel),
-                        new SecondaryDrawerItem().withIdentifier(4).withName("Enquetes").withIcon(FontAwesome.Icon.faw_list),
+                        new SecondaryDrawerItem().withIdentifier(1).withSelectable(false).withName("Todos").withIcon(FontAwesome.Icon.faw_globe),
+                        new SecondaryDrawerItem().withIdentifier(2).withSelectable(false).withName("Denúncia").withIcon(FontAwesome.Icon.faw_exclamation_triangle),
+                        new SecondaryDrawerItem().withIdentifier(3).withSelectable(false).withName("Projetos Futuros").withIcon(FontAwesome.Icon.faw_gavel),
+                        new SecondaryDrawerItem().withIdentifier(4).withSelectable(false).withName("Projetos Ativos").withIcon(FontAwesome.Icon.faw_list),
                         /*separator*/new SectionDrawerItem().withName("Histórico"),
-                        new SecondaryDrawerItem().withIdentifier(5).withName("Suas avaliações").withIcon(FontAwesome.Icon.faw_bar_chart),
+                        new SecondaryDrawerItem().withIdentifier(5).withName("Suas denúncias").withIcon(FontAwesome.Icon.faw_bar_chart),
                         /*separator*/ new DividerDrawerItem(),
                         new SecondaryDrawerItem().withIdentifier(8).withSelectable(false).withName("Compartilhe").withIcon(FontAwesome.Icon.faw_share_alt),
                         new SecondaryDrawerItem().withIdentifier(10).withName("Sobre").withIcon(FontAwesome.Icon.faw_info_circle)
@@ -77,7 +79,16 @@ public class ActionBarManager {
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
-                        // do something with the clicked item :D
+                        if (drawerItem.getIdentifier() == 1) {//todos
+                            ((MainActivity) _act).repopulate(1);
+                        } else if (drawerItem.getIdentifier() == 2) {//denuncias
+                            ((MainActivity) _act).repopulate(2);
+                        } else if (drawerItem.getIdentifier() == 3) {//projetos futuros
+                            ((MainActivity) _act).repopulate(3);
+                        } else if (drawerItem.getIdentifier() == 4) {//projetos ativos
+                            ((MainActivity) _act).repopulate(4);
+                        }
+
                         return false;
                     }
                 })
